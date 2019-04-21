@@ -4,7 +4,7 @@
 [ext_resource path="res://Art/FRESHMAIN_Template.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 33.8737, 104.446 )
+extents = Vector2( 18.3529, 104.446 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -15,4 +15,7 @@ shape = SubResource( 1 )
 
 [node name="FRESHMAIN_Template" type="Sprite" parent="."]
 texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -40, 10, 40, 10, 0, -40 )
 

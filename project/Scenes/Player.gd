@@ -17,18 +17,20 @@ func _physics_process(delta):
 		velocity.x =  WALK_SPEED
 	else:
 		velocity.x = 0
-
 	
+	#cancel upward momentum if hit ceiling
+	if velocity.y < 0 && is_on_ceiling():
+		velocity.y = 0
+		
+	#keep downward momentum 0 if on floor
 	if velocity.y < 1 && !is_on_floor ():
 		velocity.y += 5
 	elif is_on_floor ():
 		velocity.y = 0
 	
+	#jump
 	if Input.is_action_just_pressed("up"):
 		velocity.y = -500
-	
-	
-	move_and_slide(velocity, Vector2(0, -1))
-	
-	
+
+	move_and_slide(velocity, Vector2(0, -1))	
 	pass
