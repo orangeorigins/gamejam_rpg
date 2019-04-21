@@ -13,3 +13,14 @@ centered = false
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="blue/StaticBody2D"]
 polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64, 0, 0 )
 
+[node name="empty" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 128, 0 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="empty"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="empty/StaticBody2D"]
+polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64, 0, 0 )
+
