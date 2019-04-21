@@ -37,5 +37,5 @@ bbcode_enabled = true
 bbcode_text = "[b]NAME[/b]"
 text = "NAME"
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered" binds= [ false ]]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
