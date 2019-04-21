@@ -9,16 +9,16 @@ var velocity : Vector2 = Vector2()
 func _physics_process(delta):
 	
 	velocity.y += delta * GRAVITY
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("left"):
 		$FRESHMAIN_Template.set_flip_h(true)
 		velocity.x = -WALK_SPEED
-	elif Input.is_action_pressed("ui_right"):
+	elif Input.is_action_pressed("right"):
 		$FRESHMAIN_Template.set_flip_h(false)
 		velocity.x =  WALK_SPEED
 	else:
 		velocity.x = 0
 	
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("up"):
 		velocity.y = -500
 	
 	
