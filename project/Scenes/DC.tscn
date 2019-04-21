@@ -68,6 +68,6 @@ position = Vector2( 230.828, 528.28 )
 texture = ExtResource( 6 )
 
 [node name="NPC" parent="." instance=ExtResource( 7 )]
-position = Vector2( 845.263, 413.684 )
+position = Vector2( 838.947, 424.211 )
 dialog = [ "HEY MAN", "ARE YOU READY FOR UNIVERSITY OF RPG??!?", "I LOVE THIS PLACE", "MAN IM SO READY TO GO HERE", "ARE YOU TOO?" ]
 
