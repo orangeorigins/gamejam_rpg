@@ -8,6 +8,7 @@ extents = Vector2( 242.026, 109.597 )
 
 [node name="NPC" type="Node2D"]
 script = ExtResource( 1 )
+npc_name = "HYPE BEAST"
 
 [node name="NPC_Template" type="Sprite" parent="."]
 position = Vector2( -6, 0 )
@@ -19,4 +20,22 @@ texture = ExtResource( 2 )
 position = Vector2( -5.51138, 13.8635 )
 shape = SubResource( 1 )
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered" binds= [ false ]]
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -92.0
+margin_top = -163.0
+margin_right = 94.0
+margin_bottom = -61.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = -93.7169
+margin_top = -185.283
+margin_right = 149.283
+margin_bottom = -152.283
+rect_scale = Vector2( 2, 2 )
+bbcode_enabled = true
+bbcode_text = "[b]NAME[/b]"
+text = "NAME"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

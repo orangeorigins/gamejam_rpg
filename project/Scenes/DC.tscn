@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Art/Background_DC.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/Chair.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/DC Table.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Art/NPC SITTING.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/NPC.tscn" type="PackedScene" id=7]
 
 [node name="DC" type="Node2D"]
 
@@ -40,6 +41,22 @@ scale = Vector2( -1, 1 )
 position = Vector2( 921.245, 523.452 )
 scale = Vector2( -1, 1 )
 
+[node name="Chair6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1121.93, 527.128 )
+scale = Vector2( -1, 1 )
+
+[node name="Chair7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1121.93, 478.612 )
+scale = Vector2( -1, 1 )
+
+[node name="Chair8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1124.13, 405.838 )
+scale = Vector2( -1, 1 )
+
+[node name="Chair9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1124.13, 338.209 )
+scale = Vector2( -1, 1 )
+
 [node name="DC Table" parent="." instance=ExtResource( 5 )]
 position = Vector2( 322.467, 533.194 )
 
@@ -49,4 +66,8 @@ position = Vector2( 830.841, 527.004 )
 [node name="NPC SITTING" type="Sprite" parent="."]
 position = Vector2( 230.828, 528.28 )
 texture = ExtResource( 6 )
+
+[node name="NPC" parent="." instance=ExtResource( 7 )]
+position = Vector2( 845.263, 413.684 )
+dialog = [ "HEY MAN", "ARE YOU READY FOR UNIVERSITY OF RPG??!?", "I LOVE THIS PLACE", "MAN IM SO READY TO GO HERE", "ARE YOU TOO?" ]
 

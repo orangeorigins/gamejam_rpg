@@ -4,21 +4,41 @@ onready var area = $Area2D
 onready var col = $Area2D/CollisionShape2D
 
 # Declare member variables here. Examples:
-export var npc_name = ''
-export var dialog = []
+export var npc_name : String = ''
+export var dialog = ["HEY MAN", "ARE YOU READY FOR UNIVERSITY OF RPG??!?"]
+var dialog_index = 0
 
-
+var near_player : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	area.connect("body_entered", self, "_on_Area2D_body_entered")
+	$RichTextLabel2.text = ""
+	$RichTextLabel.text = ""
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if Input.is_action_just_pressed("ui_accept") && near_player:
+		$RichTextLabel2.text = npc_name
+		$RichTextLabel.text= dialog[dialog_index]
+		dialog_index += 1
+		if dialog_index >= dialog.size():
+			dialog_index = 0
+		
+	pass
 
 
 func _on_Area2D_body_entered(body):
+	print ("hi")
 	if not body.name == "Player":
 		return 
+	near_player = true
+
+func _on_Area2D_body_exited(body):
+	if not body.name == "Player":
+		return 
+	near_player = false
+	dialog_index = 0
+	$RichTextLabel2.text = ""
+	$RichTextLabel.text = ""
 	
+	pass # Replace with function body.
