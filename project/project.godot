@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="project"
+config/name="University of RPG"
 config/icon="res://icon.png"
 
 [display]
