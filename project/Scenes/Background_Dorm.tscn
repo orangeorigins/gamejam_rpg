@@ -1,23 +1,33 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Art/Background_Dorm.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Open Door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://tile_set.res" type="TileSet" id=4]
+[ext_resource path="res://Scenes/NPC.tscn" type="PackedScene" id=5]
 
 [node name="Background_Dorm" type="Sprite"]
+z_index = -2
+z_as_relative = false
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Open Door" parent="." instance=ExtResource( 2 )]
-position = Vector2( 153.347, 454.677 )
+position = Vector2( 150, 460 )
 destination = "res://Scenes/DC.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 340.935, 460.405 )
+z_as_relative = false
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 4 )
 format = 1
 tile_data = PoolIntArray( 589824, 2, 0, 589825, 2, 0, 589826, 2, 0, 589827, 2, 0, 589828, 2, 0, 589829, 2, 0, 589830, 2, 0, 589831, 2, 0, 589832, 2, 0, 589833, 2, 0, 589834, 2, 0, 589835, 2, 0, 589836, 2, 0, 589837, 2, 0, 589838, 2, 0, 589839, 2, 0, 589840, 2, 0, 589841, 2, 0, 589842, 2, 0, 589843, 2, 0, 589844, 2, 0, 589845, 2, 0 )
+
+[node name="NPC" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0.909804, 0.545098, 1, 1 )
+position = Vector2( 600, 460 )
+npc_name = "Valley Girl"
+dialog = [ "So liiiiike….", "Hey!" ]
 

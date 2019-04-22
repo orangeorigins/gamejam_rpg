@@ -17,5 +17,9 @@ shape = SubResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+z_as_relative = false
 polygon = PoolVector2Array( -40, 10, 40, 10, 0, -40 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
 

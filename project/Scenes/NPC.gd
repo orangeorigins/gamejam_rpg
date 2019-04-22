@@ -14,8 +14,8 @@ export var is_sitting : bool
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	area.connect("body_entered", self, "_on_Area2D_body_entered")
-	$RichTextLabel2.text = ""
-	$RichTextLabel.text = ""
+	$Label2.text = ""
+	$Label.text = ""
 	
 	if is_sitting:
 		$"NPC SITTING".visible = true
@@ -29,10 +29,10 @@ func _process(delta):
 		
 		#say nothing when finished with lines
 		if dialog_index == -1:
-			$RichTextLabel.text = ""
+			$Label.text = ""
 		else:
-			$RichTextLabel2.text = npc_name
-			$RichTextLabel.text= dialog[dialog_index]
+			$Label2.text = npc_name
+			$Label.text= dialog[dialog_index]
 		dialog_index += 1
 		if dialog_index >= dialog.size():
 			dialog_index = -1
@@ -51,7 +51,7 @@ func _on_Area2D_body_exited(body):
 		return 
 	near_player = false
 	dialog_index = 0
-	$RichTextLabel2.text = ""
-	$RichTextLabel.text = ""
+	$Label2.text = ""
+	$Label.text = ""
 	
 	pass # Replace with function body.

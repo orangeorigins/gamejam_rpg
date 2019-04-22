@@ -7,6 +7,8 @@
 extents = Vector2( 66.7369, 120.211 )
 
 [node name="Open Door" type="Sprite"]
+z_index = -1
+z_as_relative = false
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
