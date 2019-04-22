@@ -31,8 +31,10 @@ func _process(delta):
 		
 		#say nothing when finished with lines
 		if dialog_index == -1:
+			$Name.visible = false
 			d_label.visible = false
 		else:
+			$Name.visible = true
 			d_label.visible = true
 			$Name.text = npc_name
 			d_label.text = dialog[dialog_index]
