@@ -18,17 +18,22 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept") && near_player:
-		$RichTextLabel2.text = npc_name
-		$RichTextLabel.text= dialog[dialog_index]
+		
+		#say nothing when finished with lines
+		if dialog_index == -1:
+			$RichTextLabel.text = ""
+		else:
+			$RichTextLabel2.text = npc_name
+			$RichTextLabel.text= dialog[dialog_index]
 		dialog_index += 1
 		if dialog_index >= dialog.size():
-			dialog_index = 0
+			dialog_index = -1
+			
 		
 	pass
 
 
 func _on_Area2D_body_entered(body):
-	print ("hi")
 	if not body.name == "Player":
 		return 
 	near_player = true

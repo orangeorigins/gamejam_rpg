@@ -5,9 +5,39 @@ const WALK_SPEED : float = 200.0
 
 var velocity : Vector2 = Vector2()
 
+var is_flying_spinkick : bool = false
+var kick_left : bool = false
+var disabled = false
+
+func _process(delta):
+	
+	if Input.is_action_just_pressed("b") && !is_on_floor():
+		is_flying_spinkick = true
+		if $FRESHMAIN_Template.flip_h == true:
+			kick_left = true
+			self.rotate(-5.0*delta)
+		else:
+			kick_left = false
+			self.rotate(5.0*delta)
+
+	
+	if is_flying_spinkick && rotation != 0:
+		if kick_left:
+			self.rotate(-5.0*delta)
+			if rotation > 0 && rotation < 0.1:
+				rotation = 0
+		else:
+			self.rotate(5.0*delta)
+			if rotation < 0 && rotation > -0.1:
+				rotation = 0
+
 
 func _physics_process(delta):
 	
+	if is_on_floor():
+		is_flying_spinkick = false
+		rotation = 0
+		
 	velocity.y += delta * GRAVITY
 	if Input.is_action_pressed("left"):
 		$FRESHMAIN_Template.set_flip_h(true)
