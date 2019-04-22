@@ -34,9 +34,10 @@ func _process(delta):
 
 func _physics_process(delta):
 	
-	if is_on_floor():
+	if is_on_floor() && is_flying_spinkick:
 		is_flying_spinkick = false
 		rotation = 0
+		translate(Vector2(0,-37))
 		
 	velocity.y += delta * GRAVITY
 	if Input.is_action_pressed("left"):

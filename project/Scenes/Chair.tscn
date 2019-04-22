@@ -13,4 +13,5 @@ __meta__ = {
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( -0.673569, -0.370056 )
 polygon = PoolVector2Array( -34.4369, -9.0768, -20.9147, -8.64752, -19.3264, 40.3701, 20.6736, 40.3701, 14.1508, 116.723, -24.9352, 117.187 )
+one_way_collision = true
 

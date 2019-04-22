@@ -1,16 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/NPC.gd" type="Script" id=1]
 [ext_resource path="res://Art/NPC_Template.png" type="Texture" id=2]
 [ext_resource path="res://Art/NPC SITTING.png" type="Texture" id=3]
 [ext_resource path="res://Font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Scenes/Text_Center.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 242.026, 109.597 )
 
 [node name="NPC" type="Node2D"]
 script = ExtResource( 1 )
-npc_name = "HYPE BEAST"
+dialog = [ "SAMPLE TEXT", "CHANGE MY DIALOG!" ]
 is_sitting = false
 
 [node name="NPC_Template" type="Sprite" parent="."]
@@ -27,21 +28,33 @@ shape = SubResource( 1 )
 position = Vector2( -0.37738, -23.7733 )
 texture = ExtResource( 3 )
 
-[node name="Label" type="Label" parent="."]
-margin_left = -50.9427
-margin_top = -149.432
-margin_right = 51.0573
-margin_bottom = -133.432
-custom_fonts/font = ExtResource( 4 )
-text = "SAMPLE TEXT"
-
-[node name="Label2" type="Label" parent="."]
-margin_left = -20.7544
-margin_top = -172.828
-margin_right = 19.2456
-margin_bottom = -158.828
+[node name="Name" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -55.5
+margin_top = -180.0
+margin_right = 55.5
+margin_bottom = -160.0
 custom_fonts/font = ExtResource( 4 )
 text = "NAME"
+align = 1
+script = ExtResource( 5 )
+
+[node name="Dialog" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -196.5
+margin_top = -143.773
+margin_right = 196.5
+margin_bottom = -123.773
+custom_fonts/font = ExtResource( 4 )
+text = "SAMPLE TEXT"
+align = 1
+script = ExtResource( 5 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="resized" from="Name" to="Name" method="_on_resized"]
+[connection signal="resized" from="Dialog" to="Dialog" method="_on_resized"]
