@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Art/Background_DC.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://tile_set.res" type="TileSet" id=3]
-[ext_resource path="res://Scenes/Chair.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/DC Table.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Art/NPC SITTING.png" type="Texture" id=6]
-[ext_resource path="res://Scenes/NPC.tscn" type="PackedScene" id=7]
+[ext_resource path="res://tile_set.res" type="TileSet" id=2]
+[ext_resource path="res://Scenes/Chair.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/DC Table.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Art/NPC SITTING.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/NPC.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Open Door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=8]
 
 [node name="DC" type="Node2D"]
 
@@ -17,57 +18,76 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 2 )
 format = 1
 tile_data = PoolIntArray( 131075, 0, 0, 131076, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 655360, 2, 0, 655361, 2, 0, 655362, 2, 0, 655363, 2, 0, 655364, 2, 0, 655365, 2, 0, 655366, 2, 0, 655367, 2, 0, 655368, 2, 0, 655369, 2, 0, 655370, 2, 0, 655371, 2, 0, 655372, 2, 0, 655373, 2, 0, 655374, 2, 0, 655375, 2, 0, 655376, 2, 0, 655377, 2, 0, 655378, 2, 0, 655379, 2, 0, 655380, 2, 0, 655381, 2, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Chair" parent="." instance=ExtResource( 4 )]
+[node name="Chair" parent="." instance=ExtResource( 3 )]
 position = Vector2( 230, 529 )
 
-[node name="Chair2" parent="." instance=ExtResource( 4 )]
+[node name="Chair2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 738.374, 522.81 )
 
-[node name="Chair4" parent="." instance=ExtResource( 4 )]
+[node name="Chair4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 412.871, 529.643 )
 scale = Vector2( -1, 1 )
 
-[node name="Chair5" parent="." instance=ExtResource( 4 )]
+[node name="Chair5" parent="." instance=ExtResource( 3 )]
 position = Vector2( 921.245, 523.452 )
 scale = Vector2( -1, 1 )
 
-[node name="Chair6" parent="." instance=ExtResource( 4 )]
+[node name="Chair6" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1121.93, 527.128 )
 scale = Vector2( -1, 1 )
 
-[node name="Chair7" parent="." instance=ExtResource( 4 )]
+[node name="Chair7" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1121.93, 478.612 )
 scale = Vector2( -1, 1 )
 
-[node name="Chair8" parent="." instance=ExtResource( 4 )]
+[node name="Chair8" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1124.13, 405.838 )
 scale = Vector2( -1, 1 )
 
-[node name="Chair9" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1124.13, 338.209 )
+[node name="Chair9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1125.68, 336.661 )
 scale = Vector2( -1, 1 )
 
-[node name="DC Table" parent="." instance=ExtResource( 5 )]
+[node name="Chair10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1128, 265.474 )
+scale = Vector2( -1, 1 )
+
+[node name="Chair11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1128.77, 188.096 )
+scale = Vector2( -1, 1 )
+
+[node name="Chair12" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1145.02, 92.1467 )
+scale = Vector2( -1, 1 )
+
+[node name="DC Table" parent="." instance=ExtResource( 4 )]
 position = Vector2( 322.467, 533.194 )
 
-[node name="DC Table2" parent="." instance=ExtResource( 5 )]
+[node name="DC Table2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 830.841, 527.004 )
 
 [node name="NPC SITTING" type="Sprite" parent="."]
 position = Vector2( 230.828, 528.28 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
-[node name="NPC" parent="." instance=ExtResource( 7 )]
+[node name="NPC" parent="." instance=ExtResource( 6 )]
 position = Vector2( 838.947, 424.211 )
 dialog = [ "MAN I am SO EXCITEDDDD!!!!", "PARTYYYY!!!", "I LOVE OUR SCHOOL!! ", "WOOO!!!!!", "SUPPPPREEEEEMMMMMEEEEE!!!!!" ]
+
+[node name="Open Door" parent="." instance=ExtResource( 7 )]
+position = Vector2( 90.8818, 536.96 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+flip_h = true
+destination = "res://Scenes/Background_Dorm.tscn"
+
+[node name="Player" parent="." instance=ExtResource( 8 )]
 

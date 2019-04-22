@@ -10,12 +10,20 @@ var dialog_index = 0
 
 var near_player : bool = false
 
+export var is_sitting : bool
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	area.connect("body_entered", self, "_on_Area2D_body_entered")
 	$RichTextLabel2.text = ""
 	$RichTextLabel.text = ""
-
+	
+	if is_sitting:
+		$"NPC SITTING".visible = true
+		$NPC_Template.visible = false
+	else:
+		$NPC_Template.visible = true
+		$"NPC SITTING".visible = false
+		
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept") && near_player:
 		
