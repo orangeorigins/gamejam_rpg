@@ -1,26 +1,49 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Art/blue.png" type="Texture" id=1]
+[ext_resource path="res://Art/light_bar.png" type="Texture" id=2]
+[ext_resource path="res://Art/ceiling_wire.png" type="Texture" id=3]
 
 [node name="Node" type="Node"]
 
 [node name="blue" type="Sprite" parent="."]
+editor/display_folded = true
 texture = ExtResource( 1 )
 centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="blue"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="blue/StaticBody2D"]
-polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64, 0, 0 )
+polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [node name="empty" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 0, 0, 0, 0 )
 position = Vector2( 128, 0 )
 texture = ExtResource( 1 )
 centered = false
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="empty"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="empty/StaticBody2D"]
-polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64, 0, 0 )
+polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[node name="light_bar" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 256, 0 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="light_bar"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="light_bar/StaticBody2D"]
+polygon = PoolVector2Array( 0, 0, 64, 0, 64, 20, 0, 20 )
+one_way_collision = true
+
+[node name="ceiling_wire" type="Sprite" parent="."]
+position = Vector2( 384, 0 )
+texture = ExtResource( 3 )
+centered = false
 
