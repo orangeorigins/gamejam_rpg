@@ -23,13 +23,15 @@ func _process(delta):
 	
 	if is_flying_spinkick && rotation != 0:
 		if kick_left:
-			self.rotate(-5.0*delta)
+			self.rotate(-6.0*delta)
 			if rotation > 0 && rotation < 0.1:
 				rotation = 0
+				is_flying_spinkick = false
 		else:
-			self.rotate(5.0*delta)
+			self.rotate(6.0*delta)
 			if rotation < 0 && rotation > -0.1:
 				rotation = 0
+				is_flying_spinkick = false
 
 
 func _physics_process(delta):
@@ -49,6 +51,8 @@ func _physics_process(delta):
 	else:
 		velocity.x = 0
 	
+	if is_on_floor() && Input.is_action_just_pressed("down"):
+		self.translate(Vector2(0,1.1))
 	#cancel upward momentum if hit ceiling
 	if velocity.y < 0 && is_on_ceiling():
 		velocity.y = 0
