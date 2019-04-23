@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/Text_Center.gd" type="Script" id=2]
+
+[node name="Dialog" type="Label"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -196.5
+margin_top = -143.773
+margin_right = 196.5
+margin_bottom = -123.773
+custom_fonts/font = ExtResource( 1 )
+text = "SAMPLE TEXT"
+align = 1
+script = ExtResource( 2 )
+
+[connection signal="resized" from="." to="." method="_on_resized"]

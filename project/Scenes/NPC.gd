@@ -15,7 +15,6 @@ onready var d_label = $Dialog
 export var is_sitting : bool
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	area.connect("body_entered", self, "_on_Area2D_body_entered")
 	$Name.text = ""
 	$Dialog.text = ""
 	

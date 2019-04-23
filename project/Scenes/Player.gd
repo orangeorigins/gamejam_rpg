@@ -83,7 +83,15 @@ func flip_sprites(left):
 	
 	
 	
+func ouch():
+	var ouchies = ["ouch", "oof", "muh ankles", "owie", "youch"]
+	var i = randi()%ouchies.size()
+	$Dialog.text = ouchies[i]
+	$"dialog timer".start()
 	
 	
 	
-	
+
+func _on_dialog_timer_timeout():
+	$Dialog.text = ""
+	pass # Replace with function body.

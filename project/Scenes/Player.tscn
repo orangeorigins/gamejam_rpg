@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=1]
 [ext_resource path="res://Art/FRESHMAIN_Template.png" type="Texture" id=2]
 [ext_resource path="res://rgb_shirt.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Dialog.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/dialog timer.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18.3529, 104.446 )
@@ -28,3 +30,10 @@ current = true
 
 [node name="rgb shirt" parent="." instance=ExtResource( 3 )]
 
+[node name="Dialog" parent="." instance=ExtResource( 4 )]
+
+[node name="dialog timer" type="Timer" parent="."]
+one_shot = true
+script = ExtResource( 5 )
+
+[connection signal="timeout" from="dialog timer" to="." method="_on_dialog_timer_timeout"]

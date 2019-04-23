@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Art/Background_DC.png" type="Texture" id=1]
 [ext_resource path="res://tile_set.res" type="TileSet" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/DC Table.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/NPC.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/spike.tscn" type="PackedScene" id=8]
 
 [node name="DC" type="Node2D"]
 
@@ -139,7 +140,10 @@ dialog = [ "MAN I am SO EXCITEDDDD!!!!", "PARTYYYY!!!", "I LOVE OUR SCHOOL!! ", 
 [node name="Name" parent="NPCs/NPC HYPE" index="3"]
 margin_left = -63.0
 margin_right = 63.0
-text = "HYPE BEAST"
+text = ""
+
+[node name="Dialog" parent="NPCs/NPC HYPE" index="4"]
+text = ""
 
 [node name="NPC ST" parent="NPCs" instance=ExtResource( 6 )]
 editor/display_folded = true
@@ -152,9 +156,15 @@ position = Vector2( 1714, 510 )
 dialog = [ "Oh man I can't beleive you're here", "I've been stuck here for 2 days" ]
 
 [node name="Name" parent="NPCs/NPC Help" index="3"]
-text = "Justin"
+text = ""
+
+[node name="Dialog" parent="NPCs/NPC Help" index="4"]
+text = ""
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
+
+[node name="spike" parent="." instance=ExtResource( 8 )]
+position = Vector2( 576, 606.227 )
 
 
 [editable path="NPCs/NPC HYPE"]

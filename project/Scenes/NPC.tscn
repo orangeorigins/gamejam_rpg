@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/NPC.gd" type="Script" id=1]
 [ext_resource path="res://Art/NPC_Template.png" type="Texture" id=2]
 [ext_resource path="res://Art/NPC SITTING.png" type="Texture" id=3]
 [ext_resource path="res://Font.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Scenes/Text_Center.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Dialog.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 242.026, 109.597 )
@@ -40,21 +41,8 @@ text = "NAME"
 align = 1
 script = ExtResource( 5 )
 
-[node name="Dialog" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -196.5
-margin_top = -143.773
-margin_right = 196.5
-margin_bottom = -123.773
-custom_fonts/font = ExtResource( 4 )
-text = "SAMPLE TEXT"
-align = 1
-script = ExtResource( 5 )
+[node name="Dialog" parent="." instance=ExtResource( 6 )]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="resized" from="Name" to="Name" method="_on_resized"]
-[connection signal="resized" from="Dialog" to="Dialog" method="_on_resized"]
