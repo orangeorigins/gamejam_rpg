@@ -8,7 +8,7 @@ var velocity : Vector2 = Vector2()
 var is_flying_spinkick : bool = false
 var kick_left : bool = false
 var disabled = false
-
+ 
 func _process(delta):
 	
 	if Input.is_action_just_pressed("b") && !is_on_floor():
@@ -41,10 +41,10 @@ func _physics_process(delta):
 		
 	velocity.y += delta * GRAVITY
 	if Input.is_action_pressed("left"):
-		$FRESHMAIN_Template.set_flip_h(true)
+		flip_sprites(true)
 		velocity.x = -WALK_SPEED
 	elif Input.is_action_pressed("right"):
-		$FRESHMAIN_Template.set_flip_h(false)
+		flip_sprites(false)
 		velocity.x =  WALK_SPEED
 	else:
 		velocity.x = 0
@@ -65,3 +65,21 @@ func _physics_process(delta):
 
 	move_and_slide(velocity, Vector2(0, -1))	
 	pass
+
+func flip_sprites(left):
+	if left:
+		for node in get_children():
+			if node is Sprite:
+				node.set_flip_h(true)
+	else:
+		for node in get_children():
+			if node is Sprite:
+				node.set_flip_h(false)
+	pass
+	
+	
+	
+	
+	
+	
+	
